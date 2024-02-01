@@ -5,13 +5,14 @@ import { AssetsModule } from './assets/assets.module';
 import { OrdersModule } from './orders/orders.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Asset } from './assets/entities/asset.entity';
+import { Order } from './orders/entities/order.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: '.db/challenge',
-      entities: [Asset],
+      entities: [Asset, Order],
       synchronize: true,
       logging: true,
     }),
